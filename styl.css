@@ -1,0 +1,210 @@
+/* Root color variables for consistency */
+:root {
+  --primary-color: #00796B;
+  --secondary-color: #004D40;
+  --accent-color: #FF7043;
+  --bg-light: #f0fdfb;
+  --text-dark: #1a1a1a;
+  --header-bg: #004d40;
+}
+
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header styling */
+header {
+  background-color: var(--header-bg);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* Navigation styling */
+nav {
+  margin: 30px auto;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+  background-color: var(--accent-color);
+}
+
+/* Section styling */
+section {
+  background-color: white;
+  margin: 30px auto;
+  padding: 25px 30px;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 8px;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Section titles */
+section h2 {
+  font-size: 28px;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Subsection titles */
+section h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+/* Paragraphs */
+section p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Ordered list with custom style */
+ol {
+  counter-reset: item;
+}
+
+ol li {
+  position: relative;
+  padding-left: 30px;
+}
+
+ol li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: var(--header-bg);
+  color: white;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 24px;
+  }
+}
+/* Style for collapsible headers */
+.collapsible-header {
+  background-color: #0077b6; /* deep blue */
+  color: white;
+  cursor: pointer;
+  padding: 16px 20px;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.collapsible-header:hover {
+  background-color: #0096c7; /* lighter blue on hover */
+  transform: scale(1.02); /* subtle pop */
+}
+
+.collapsible-header.active {
+  background-color: #023e8a; /* darker blue when active */
+}
+
+/* Style for the collapsible content */
+.collapsible-content {
+  display: none; /* Hidden by default */
+  padding: 15px 20px;
+  background-color: #f1f1f1;
+  border-left: 4px solid #0077b6;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Optional animation */
+.collapsible-content p,
+.collapsible-content ul {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
